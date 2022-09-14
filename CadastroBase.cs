@@ -1,13 +1,26 @@
 namespace TRABALHO{
 
-    public class CadastroBase
+    public abstract class CadastroBase
     {
+        private int codigo;
         private string nome = "";
         private string cpf = "";
         private string rg = "";
         private string dataNascimento = "";
         private Endereco endereco;
+        private static int ultimoCodigo;
 
+        public CadastroBase(){
+            ultimoCodigo++
+            this.codigo = ultimoCodigo;
+            this.nome = "";
+            this.cpf = "";
+            this.rg = "";
+            this.dataNascimento == new DateTime();
+            this.endereco = new endereco();
+
+        }
+        
         public string GetNome(){
             return nome;
         }
@@ -43,5 +56,25 @@ namespace TRABALHO{
         }
 
         }
+
+        public void CadastroBase(){
+            Console.WriteLine("______________________________________|");
+            Console.WriteLine("|                                     |");
+            Console.WriteLine("|           Cadastro Base :           |");
+            Console.WriteLine("|_____________________________________|");
+            Console.Write("\n\n");
+            Console.Write("Nome: ");
+            nome = Console.ReadLine();
+            Console.Write("CPF: ");
+            cpf = Console.ReadLine();
+            Console.Write("RG: ");
+            rg = Console.ReadLine();
+            Console.Write("Data de nascimento: ");
+            dataNascimento= Console.ReadLine();
+
+            endereco.CadastroBase();
+        }
+
+        
     }
 }
